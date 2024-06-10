@@ -1,0 +1,29 @@
+<section class="bg-card d-flex justify-content-between radius container-header mb-3">
+  <header class="d-flex ms-2">
+    <div [innerHTML]="contentSVG" class="bg-app circle">
+    </div>
+    <div class="ms-3 m-auto">
+      <h2 class="m-0  fw-bold color-primary text-md">{{title}}</h2>
+      <span class="fst-italic color-primary text-md">{{description}}</span>
+    </div>
+  </header>
+  <main class="d-flex align-items-center">
+    <div>
+      <button type="button" class="btn bg-descarga text-white text-md"><svg width="16" height="16" viewBox="0 0 12 16"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0.166626 15.0833H11.8333V13.4166H0.166626V15.0833ZM11.8333 5.91663H8.49996V0.916626H3.49996V5.91663H0.166626L5.99996 11.75L11.8333 5.91663Z"
+            fill="white" />
+        </svg>
+        Descargar</button>
+      <button type="button" class="btn bg-actualizar mx-2 text-md">
+        <svg width="16" height="16" viewBox="0 0 12 14" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1.99996 7.85669C1.99996 6.75669 2.44663 5.75669 3.17329 5.03002L2.22663 4.08336C1.26663 5.05002 0.666626 6.38336 0.666626 7.85669C0.666626 10.5767 2.69996 12.8167 5.33329 13.1434V11.7967C3.44663 11.4767 1.99996 9.83669 1.99996 7.85669ZM11.3333 7.85669C11.3333 4.91002 8.94663 2.52336 5.99996 2.52336C5.95996 2.52336 5.91996 2.53002 5.87996 2.53002L6.60663 1.80336L5.66663 0.856689L3.33329 3.19002L5.66663 5.52336L6.60663 4.58336L5.88663 3.86336C5.92663 3.86336 5.96663 3.85669 5.99996 3.85669C8.20663 3.85669 9.99996 5.65002 9.99996 7.85669C9.99996 9.83669 8.55329 11.4767 6.66663 11.7967V13.1434C9.29996 12.8167 11.3333 10.5767 11.3333 7.85669Z"
+            fill="#2A4B6F" />
+        </svg>
+        Actualizar</button>
+    </div>
+  </main>
+</section>

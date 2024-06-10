@@ -1,0 +1,72 @@
+<div class="h-100">
+  <app-header-menu title="Categorias" description="Listado de Categorias" [icon]="icon"></app-header-menu>
+  <div class="container-table bg-card radius">
+    <p-table #dt1 [value]="customers" selectionMode="single" [(selection)]="selectedCustomers" dataKey="id"
+      [tableStyle]="{'min-width': '50rem'}" [rows]="10" [paginator]="true" stateStorage="session"
+      stateKey="statedemo-session">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name" style="width:25%">Id <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="country.name" style="width:25%">Categoria <p-sortIcon field="country.name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="representative.name" style="width:25%">Estado <p-sortIcon
+              field="representative.name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="status" style="width:25%">Acciones <p-sortIcon field="status"></p-sortIcon>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <input pInputText #name type="text" (input)="dt1.filter(name.value, 'name', 'contains')"
+              [value]="name.value" placeholder="Search by Name" class="w-full">
+          </th>
+          <th>
+            <input pInputText #country type="text" (input)="dt1.filter(country.value, 'country.name', 'contains')"
+              [value]="country.value" placeholder="Search by Country" class="w-full">
+          </th>
+          <th>
+            <input pInputText type="text" #representative
+              (input)="dt1.filter(representative.value, 'representative.name', 'contains')"
+              [value]="representative.value" placeholder="Search by Representative" class="w-full">
+          </th>
+          <th>
+            <input pInputText #status type="text" (input)="dt1.filter(status.value, 'status', 'contains')"
+              [value]="status.value" placeholder="Search by Status" class="w-full">
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-customer>
+        <tr [pSelectableRow]="customer">
+          <td>
+            <span class="p-column-title">Name</span>
+            {{customer.name}}
+          </td>
+          <td>
+            <span class="p-column-title">Representative</span>
+            <img [alt]="customer.representative.name"
+              src="https://primefaces.org/cdn/primeng/images/demo/avatar/{{customer.representative.image}}" width="32"
+              style="vertical-align: middle" />
+            <span class="ml-1 vertical-align-middle">{{customer.representative.name}}</span>
+          </td>
+          <td>
+            <span class="p-column-title">Status</span>
+            <p-tag [value]="customer.status" [severity]="getSeverity(customer.status) ?? undefined"></p-tag>
+
+          </td>
+          <td>
+            <span class="p-column-title">Country</span>
+            <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+              [class]="'flag flag-' + customer.country.code" style="width: 20px">
+            <span class="ml-1 vertical-align-middle">{{customer.country.name}}</span>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="4">No customers found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="p-4 bg-app text-white">
+</div>
+
+<section class="p-4 shadow form container-fluid">
+  <div class="row m-0 p-0 justify-content-center align-items-center form-container">
+    <form class="m-0 h-100 bg-card p-4 col-12 col-sm-12 col-md-9 col-lg-7 col-xl-6 col-xxl-4 shadow">
+      <div class="d-flex flex-column w-100 align-items-center">
+        <div class="mb-4 w-50">
+          <app-button-customize  cssClass="w-100 facebook text-white btn d-block py-2 fw-bold" [icon]="iconFacebook" title="Facebook" />
+        </div>
+        <div class="mb-4 w-50">
+          <app-button-customize [icon]="iconGoogle" cssClass="w-100 google text-white btn d-block py-2 fw-bold" title="Google" />
+        </div>
+      </div>
+      <div class="input-group mb-4">
+        <span class="input-group-text" id="usuario">→</span>
+        <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-4">
+        <span class="input-group-text" id="contrasenia">♪</span>
+        <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
+      </div>
+      <div>
+        <a href="#" class="d-block color-primary  text-decoration-none mb-4">Olvidaste tu contraseña..?</a>
+        <button type="submit" class="btn w-100 bg-app text-white fw-bolder py-2" (click)="loguear($event)">Ingresar</button>
+      </div>
+    </form>
+  </div>
+</section>

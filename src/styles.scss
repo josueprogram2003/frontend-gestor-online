@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/scss/bootstrap';
+@import './app/core/scss/variables.scss';
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import 'primeicons/primeicons.css';
+@import './app/core/scss/variables.scss';
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-color: $bg-body;
+}
+
+input{
+  border-radius: 10px;
+  outline: none;
+  padding: 5px 10px;
+  border: 1px solid #E5E7EB;
+}
+
+.bg-app{
+  background-color: $bg-main !important;
+}
+
+.bg-card{
+  background-color: $bg-card !important;
+}
+
+.color-primary{
+  color: $bg-main !important;
+}
+
+input:focus{
+  box-shadow: 0 0 20px $input-focus-box-shadow !important;
+}
+
+a{
+  text-decoration: none;
+  color: $text-color-white !important;
+}
+
+ul{
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+div.p-panelmenu-header-content{
+  background-color: transparent !important;
+  border: none;
+}
+
+div.p-panelmenu-header-content:hover{
+  background-color: $bg-hover !important;
+  transition: all .4s ease-in-out;
+}
+
+.circle{
+  background-color: $bg-main;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.radius{
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+.text-md{
+  font-size: $text-md;
+}

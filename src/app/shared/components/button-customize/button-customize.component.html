@@ -1,0 +1,12 @@
+@if (icon) {
+  <ng-container>
+    <button type="button" [ngClass]="[cssClass]">
+      <span class="me-3 d-inline-block" [innerHTML]="contentSVG"></span>
+        {{ title }}
+    </button>
+  </ng-container>
+}@else {
+  <button type="button" [ngClass]="[cssClass]">
+    {{title}}
+   </button>
+}

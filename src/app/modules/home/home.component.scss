@@ -1,0 +1,56 @@
+@import '../../core/scss/variables.scss';
+
+.sidebar{
+  position: fixed;
+  left: 0;
+  z-index: 2;
+  top: 55px;
+  width: 100%;
+  background-color: $bg-main;
+  transform: translateX(-100%);
+  transition: all .5s ease;
+}
+
+.show{
+  display: block;
+  transform: translateX(0%);
+  transition: all .5s ease;
+}
+
+.header{
+  background-color: $bg-card;
+}
+
+.main-outlet{
+  padding: 1rem;
+}
+
+@media screen and (min-width : 800px) {
+  .sidebar{
+    width: 230px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    margin-bottom: 0;
+    transition: all .5s ease-in-out;
+  }
+
+  .show{
+    transform: translateX(0%);
+    display: block;
+    transition: all .5s ease-in-out;
+  }
+
+  .header{
+    margin-left: 230px;
+    width: calc(100% - 230px);
+    height: 70px;
+  }
+
+  .main-outlet{
+    margin-left: 230px;
+    background-color: $bg-body;
+    height: calc(100vh - 70px);
+  }
+}
